@@ -37,7 +37,8 @@ const SelectList: React.FC<SelectListProps> =  ({
         onSelect = () => {},
         save = 'key',
         dropdownShown = false,
-        fontFamily
+        fontFamily,
+        setScrollEnabled
     }) => {
 
     const oldOption = React.useRef(null)
@@ -57,6 +58,8 @@ const SelectList: React.FC<SelectListProps> =  ({
             useNativeDriver:false,
             
         }).start()
+
+        setScrollEnabled(false)
     }
     const slideup = () => {
         
@@ -66,6 +69,8 @@ const SelectList: React.FC<SelectListProps> =  ({
             useNativeDriver:false,
             
         }).start(() => setDropdown(false))
+
+        setScrollEnabled(true)
     }
 
     React.useEffect( () => {
@@ -190,7 +195,7 @@ const SelectList: React.FC<SelectListProps> =  ({
                 (dropdown)
                 ?
                     <Animated.View style={[{maxHeight:animatedvalue},styles.dropdown,dropdownStyles]}>
-                        <ScrollView  contentContainerStyle={{paddingVertical:10,overflow:'hidden'}} nestedScrollEnabled={true}>
+                        <ScrollView  contentContainerStyle={{paddingVertical:10,overflow:'hidden'}} nestedScrollEnabled={true} scrollEnabled={true}>
 
                             {
                                 (filtereddata.length >=  1)
