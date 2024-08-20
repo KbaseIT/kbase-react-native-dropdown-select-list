@@ -63,7 +63,7 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
         
         Animated.timing(animatedvalue,{
             toValue:height,
-            duration:500,
+            duration:0,
             useNativeDriver:false,
             
         }).start()
@@ -74,7 +74,7 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
         
         Animated.timing(animatedvalue,{
             toValue:0,
-            duration:500,
+            duration:0,
             useNativeDriver:false,
             
         }).start(() => setDropdown(false))
