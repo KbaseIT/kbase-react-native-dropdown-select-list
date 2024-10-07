@@ -45,14 +45,14 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
         checkBoxStyles,
         save = 'key',
         dropdownShown = false,
-        defaultOption,
+        defaultOptions,
         setScrollEnabled
     }) => {
 
     const oldOption = React.useRef(null)
     const [_firstRender,_setFirstRender] = React.useState<boolean>(true);
     const [dropdown, setDropdown] = React.useState<boolean>(dropdownShown);
-    const [selectedval, setSelectedVal] = React.useState<any>(defaultOption || []);
+    const [selectedval, setSelectedVal] = React.useState<any>(defaultOptions || []);
     const [height,setHeight] = React.useState<number>(350)
     const animatedvalue = React.useRef(new Animated.Value(0)).current;
     const [filtereddata,setFilteredData] = React.useState(data);
@@ -114,9 +114,9 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
     },[dropdownShown])
 
     React.useEffect(() => {
-        console.log('defaultOption',defaultOption)
+        console.log('defaultOptions',defaultOptions)
         console.log('selectedval',selectedval)
-    },[defaultOption])
+    },[defaultOptions])
 
 
 
