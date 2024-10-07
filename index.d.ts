@@ -165,7 +165,13 @@ export interface MultipleSelectListProps  {
     /**
     * The default option of the select list
     */
-    defaultOption?: { key: any, value: any },
+    defaultOption?: { key: any, value: any }[],
+
+    
+    /**
+    * The default options of the select lists
+    */
+    defaultOptions?: { key: any, value: any }[],
 
     /**
     * Pass any JSX to this prop like Text, Image or Icon to show instead of search icon
